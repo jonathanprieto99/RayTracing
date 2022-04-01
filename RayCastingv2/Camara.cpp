@@ -54,16 +54,17 @@ void Camara::Renderizar() {
             rayo.dir.normalize();
             color_min = vec3(1,1,1);
             if (esf1.interseccion(rayo, t, normal) ) {
+                vec3 luz_ambiente = luz.color * 0.1;
                 // pintar el pixel con el color de la esfera
                 color_min = esf1.color;
                 vec3 L = luz.pos - (rayo.ori + rayo.dir * t);
                 L.normalize();
-                float fd = L.prod_punto( normal );
-                if ( fd > 0 ) {
-                    color_min = color_min * luz.color * esf1.kd * fd;
-                } else {
-                    color_min = color_min * esf1.kd;
+                float factor_difuso = L.prod_punto( normal );
+                vec3 luz_difusa(0,0,0);
+                if ( factor_difuso > 0 ) {
+                    luz_difusa = luz.color * esf1.kd * factor_difuso;
                 }
+                color_min = color_min * (luz_ambiente + luz_difusa);
                 color_min.max_to_one();
             }
             //cout << ori.x << " " << ori.y <<  " " << ori.z;
