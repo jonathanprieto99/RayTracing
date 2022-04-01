@@ -42,7 +42,7 @@ void Camara::Renderizar() {
     vec3 normal, normal_min;
 
     Esfera esf1;
-    esf1.cen = vec3(40,40,0);
+    esf1.cen = vec3(0,0,0);
     esf1.rad = 20;
     esf1.color = vec3(1,0,0);
     esf1.kd = 0.8;
@@ -57,8 +57,13 @@ void Camara::Renderizar() {
                 // pintar el pixel con el color de la esfera
                 color_min = esf1.color;
                 vec3 L = luz.pos - (rayo.ori + rayo.dir * t);
+                L.normalize();
                 float fd = L.prod_punto( normal );
-                color_min = color_min * luz.color * esf1.kd * fd;
+                if ( fd > 0 ) {
+                    color_min = color_min * luz.color * esf1.kd * fd;
+                } else {
+                    color_min = color_min * esf1.kd;
+                }
                 color_min.max_to_one();
             }
             //cout << ori.x << " " << ori.y <<  " " << ori.z;

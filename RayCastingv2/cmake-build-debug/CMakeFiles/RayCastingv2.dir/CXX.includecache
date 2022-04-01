@@ -136,19 +136,9 @@ C:/Users/hgallegos/CLionProjects/CG20221/RayTracing/RayCastingv2/CImg.h
 vec3.h
 C:/Users/hgallegos/CLionProjects/CG20221/RayTracing/RayCastingv2/vec3.h
 
-C:/Users/hgallegos/CLionProjects/CG20221/RayTracing/RayCastingv2/Luz.cpp
-Luz.h
-C:/Users/hgallegos/CLionProjects/CG20221/RayTracing/RayCastingv2/Luz.h
-
 C:/Users/hgallegos/CLionProjects/CG20221/RayTracing/RayCastingv2/Luz.h
 vec3.h
 C:/Users/hgallegos/CLionProjects/CG20221/RayTracing/RayCastingv2/vec3.h
-
-C:/Users/hgallegos/CLionProjects/CG20221/RayTracing/RayCastingv2/Objeto.cpp
-iostream
--
-Objeto.h
-C:/Users/hgallegos/CLionProjects/CG20221/RayTracing/RayCastingv2/Objeto.h
 
 C:/Users/hgallegos/CLionProjects/CG20221/RayTracing/RayCastingv2/Objeto.h
 vec3.h
@@ -156,21 +146,7 @@ C:/Users/hgallegos/CLionProjects/CG20221/RayTracing/RayCastingv2/vec3.h
 Rayo.h
 C:/Users/hgallegos/CLionProjects/CG20221/RayTracing/RayCastingv2/Rayo.h
 
-C:/Users/hgallegos/CLionProjects/CG20221/RayTracing/RayCastingv2/Rayo.cpp
-Rayo.h
 C:/Users/hgallegos/CLionProjects/CG20221/RayTracing/RayCastingv2/Rayo.h
-
-C:/Users/hgallegos/CLionProjects/CG20221/RayTracing/RayCastingv2/Rayo.h
-vec3.h
-C:/Users/hgallegos/CLionProjects/CG20221/RayTracing/RayCastingv2/vec3.h
-
-C:/Users/hgallegos/CLionProjects/CG20221/RayTracing/RayCastingv2/main.cpp
-iostream
--
-Camara.h
-C:/Users/hgallegos/CLionProjects/CG20221/RayTracing/RayCastingv2/Camara.h
-
-C:/Users/hgallegos/CLionProjects/CG20221/RayTracing/RayCastingv2/vec3.cpp
 vec3.h
 C:/Users/hgallegos/CLionProjects/CG20221/RayTracing/RayCastingv2/vec3.h
 
