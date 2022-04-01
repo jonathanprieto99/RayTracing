@@ -35,7 +35,7 @@ public:
     vec3 cen;
     float rad;
     vec3 color;
-    bool interseccion(Rayo &rayo, float &t, vec3 &color) {
+    bool interseccion(Rayo &rayo, float &t, vec3 &color, vec3 &normal) {
         vec3 d = rayo.dir;
         vec3 o = rayo.ori;
         float a = d.prod_punto( d );
