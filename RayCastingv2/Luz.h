@@ -14,6 +14,10 @@ public:
         pos = _pos;
         color = _color;
     }
+    void set(vec3 _pos, vec3 _color) {
+        pos = _pos;
+        color = _color;
+    }
 };
 
 

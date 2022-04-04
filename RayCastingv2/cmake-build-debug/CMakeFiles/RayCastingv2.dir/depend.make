@@ -13,8 +13,14 @@ CMakeFiles\RayCastingv2.dir\Luz.cpp.obj: ..\Luz.cpp
 CMakeFiles\RayCastingv2.dir\Luz.cpp.obj: ..\Luz.h
 CMakeFiles\RayCastingv2.dir\Luz.cpp.obj: ..\vec3.h
 
+CMakeFiles\RayCastingv2.dir\Mundo.cpp.obj: ..\CImg.h
+CMakeFiles\RayCastingv2.dir\Mundo.cpp.obj: ..\Camara.h
+CMakeFiles\RayCastingv2.dir\Mundo.cpp.obj: ..\Luz.h
 CMakeFiles\RayCastingv2.dir\Mundo.cpp.obj: ..\Mundo.cpp
 CMakeFiles\RayCastingv2.dir\Mundo.cpp.obj: ..\Mundo.h
+CMakeFiles\RayCastingv2.dir\Mundo.cpp.obj: ..\Objeto.h
+CMakeFiles\RayCastingv2.dir\Mundo.cpp.obj: ..\Rayo.h
+CMakeFiles\RayCastingv2.dir\Mundo.cpp.obj: ..\vec3.h
 
 CMakeFiles\RayCastingv2.dir\Objeto.cpp.obj: ..\Objeto.cpp
 CMakeFiles\RayCastingv2.dir\Objeto.cpp.obj: ..\Objeto.h
@@ -27,6 +33,10 @@ CMakeFiles\RayCastingv2.dir\Rayo.cpp.obj: ..\vec3.h
 
 CMakeFiles\RayCastingv2.dir\main.cpp.obj: ..\CImg.h
 CMakeFiles\RayCastingv2.dir\main.cpp.obj: ..\Camara.h
+CMakeFiles\RayCastingv2.dir\main.cpp.obj: ..\Luz.h
+CMakeFiles\RayCastingv2.dir\main.cpp.obj: ..\Mundo.h
+CMakeFiles\RayCastingv2.dir\main.cpp.obj: ..\Objeto.h
+CMakeFiles\RayCastingv2.dir\main.cpp.obj: ..\Rayo.h
 CMakeFiles\RayCastingv2.dir\main.cpp.obj: ..\main.cpp
 CMakeFiles\RayCastingv2.dir\main.cpp.obj: ..\vec3.h
 

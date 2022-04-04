@@ -5,18 +5,27 @@
 #ifndef RAYCASTINGV2_CAMARA_H
 #define RAYCASTINGV2_CAMARA_H
 
+#include <vector>
+#include "Luz.h"
+#include "Objeto.h"
 #include "CImg.h"
 #include "vec3.h"
+
+using namespace std;
 
 using namespace cimg_library;
 typedef unsigned char BYTE;
 
 class Camara {
 public:
+    Camara () {
+        prof_max = 4;
+    }
     float fov, f, a, b;
     float w, h;
     vec3 eye, center, up;
     vec3 xe, ye, ze;
+    int prof_max;
     CImg<BYTE> *pImg;
 
     void init(float angulo, float near, int ancho, int alto,
@@ -24,6 +33,8 @@ public:
     void calcular_vectores();
 
     void Renderizar();
+    void Renderizar(Luz luz, vector<Objeto*> &vec_objetos);
+    bool calcular_color(Rayo rayo, Luz &luz, vector<Objeto*> &vec_objetos, vec3 &color, int prof);
 };
 
 

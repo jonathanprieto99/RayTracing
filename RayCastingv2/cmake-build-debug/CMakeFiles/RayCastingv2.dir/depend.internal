@@ -14,8 +14,14 @@ CMakeFiles/RayCastingv2.dir/Luz.cpp.obj
  C:/Users/hgallegos/CLionProjects/CG20221/RayTracing/RayCastingv2/Luz.h
  C:/Users/hgallegos/CLionProjects/CG20221/RayTracing/RayCastingv2/vec3.h
 CMakeFiles/RayCastingv2.dir/Mundo.cpp.obj
+ C:/Users/hgallegos/CLionProjects/CG20221/RayTracing/RayCastingv2/CImg.h
+ C:/Users/hgallegos/CLionProjects/CG20221/RayTracing/RayCastingv2/Camara.h
+ C:/Users/hgallegos/CLionProjects/CG20221/RayTracing/RayCastingv2/Luz.h
  C:/Users/hgallegos/CLionProjects/CG20221/RayTracing/RayCastingv2/Mundo.cpp
  C:/Users/hgallegos/CLionProjects/CG20221/RayTracing/RayCastingv2/Mundo.h
+ C:/Users/hgallegos/CLionProjects/CG20221/RayTracing/RayCastingv2/Objeto.h
+ C:/Users/hgallegos/CLionProjects/CG20221/RayTracing/RayCastingv2/Rayo.h
+ C:/Users/hgallegos/CLionProjects/CG20221/RayTracing/RayCastingv2/vec3.h
 CMakeFiles/RayCastingv2.dir/Objeto.cpp.obj
  C:/Users/hgallegos/CLionProjects/CG20221/RayTracing/RayCastingv2/Objeto.cpp
  C:/Users/hgallegos/CLionProjects/CG20221/RayTracing/RayCastingv2/Objeto.h
@@ -28,6 +34,10 @@ CMakeFiles/RayCastingv2.dir/Rayo.cpp.obj
 CMakeFiles/RayCastingv2.dir/main.cpp.obj
  C:/Users/hgallegos/CLionProjects/CG20221/RayTracing/RayCastingv2/CImg.h
  C:/Users/hgallegos/CLionProjects/CG20221/RayTracing/RayCastingv2/Camara.h
+ C:/Users/hgallegos/CLionProjects/CG20221/RayTracing/RayCastingv2/Luz.h
+ C:/Users/hgallegos/CLionProjects/CG20221/RayTracing/RayCastingv2/Mundo.h
+ C:/Users/hgallegos/CLionProjects/CG20221/RayTracing/RayCastingv2/Objeto.h
+ C:/Users/hgallegos/CLionProjects/CG20221/RayTracing/RayCastingv2/Rayo.h
  C:/Users/hgallegos/CLionProjects/CG20221/RayTracing/RayCastingv2/main.cpp
  C:/Users/hgallegos/CLionProjects/CG20221/RayTracing/RayCastingv2/vec3.h
 CMakeFiles/RayCastingv2.dir/vec3.cpp.obj

@@ -22,6 +22,7 @@ public:
     vec3 operator*(vec3 v) { return vec3( x*v.x, y*v.y, z*v.z); }
     vec3 operator+(vec3 v) { return vec3( x+v.x, y+v.y, z+v.z); }
     vec3 operator-(vec3 v) { return vec3( x-v.x, y-v.y, z-v.z); }
+    vec3 operator-(){return vec3(-x, -y, -z); }
     void normalize() {
         double m = modulo();
         x = x/m;
