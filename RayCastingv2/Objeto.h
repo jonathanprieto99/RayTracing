@@ -23,6 +23,11 @@ public:
     bool interseccion(Rayo &rayo, float &t, vec3 &normal);
 };
 
-
+class Plano : public Objeto {
+public:
+    vec3 n;
+    float d;
+    bool interseccion(Rayo &rayo, float &t, vec3 &normal);
+};
 
 #endif //RAYCASTINGV2_OBJETO_H

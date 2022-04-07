@@ -1,3 +1,0 @@
-D:/workspace/CG20221/RayTracing/RayCastingv2/cmake-build-debug/CMakeFiles/edit_cache.dir
-D:/workspace/CG20221/RayTracing/RayCastingv2/cmake-build-debug/CMakeFiles/RayCastingv2.dir
-D:/workspace/CG20221/RayTracing/RayCastingv2/cmake-build-debug/CMakeFiles/rebuild_cache.dir

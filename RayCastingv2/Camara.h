@@ -19,7 +19,7 @@ typedef unsigned char BYTE;
 class Camara {
 public:
     Camara () {
-        prof_max = 2;
+        prof_max = 4;
     }
     float fov, f, a, b;
     float w, h;

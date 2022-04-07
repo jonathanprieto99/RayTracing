@@ -10,7 +10,7 @@ void Mundo::escenario1() {
              vec3(0,1,0));
     cam.calcular_vectores();
 
-    luz.set(vec3(30,30,30), vec3(1,1,1));
+    luz.set(vec3(35,35,30), vec3(1,1,1));
     Esfera *esf1 = new Esfera;
     esf1->cen = vec3(0,0,0);
     esf1->rad = 20;
@@ -26,6 +26,15 @@ void Mundo::escenario1() {
     esf2->kd = 0.8;
     esf2->ke = 0.4;
     vec_objetos.emplace_back(esf2);
+
+    Plano *plano = new Plano;
+    plano->n = vec3(1,10,1);
+    plano->n.normalize();
+    plano->d = 0;
+    plano->color = vec3(0,1,0);
+    plano->kd = 0.9;
+    plano->ke = 0;
+    vec_objetos.emplace_back(plano);
 
     cam.Renderizar( luz, vec_objetos );
 }

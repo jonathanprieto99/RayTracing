@@ -73,8 +73,8 @@ bool Camara::calcular_color(Rayo rayo, Luz &luz, vector<Objeto*> &vec_objetos, v
 
     for (auto pObjTmp : vec_objetos) {
         if (pObjTmp->interseccion(rayo, t_calculado, normal)) {
-            hay_interseccion = true;
             if ( t_calculado < t ) {
+                hay_interseccion = true;
                 t = t_calculado;
                 N = normal;
                 pObj = pObjTmp;
@@ -82,18 +82,30 @@ bool Camara::calcular_color(Rayo rayo, Luz &luz, vector<Objeto*> &vec_objetos, v
         }
     }
     if (hay_interseccion) {
-        vec3 luz_ambiente = luz.color * 0.1;
-        // pintar el pixel con el color de la esfera
+        vec3 luz_ambiente = luz.color * 0.3;
         color_min = pObj->color;
-        vec3 L = luz.pos - (rayo.ori + rayo.dir * t);
+        // pi punto de interseccion
+        vec3 pi = (rayo.ori + rayo.dir * t);
+        // L vector hacia la luz
+        vec3 L = luz.pos - pi;
         L.normalize();
-        float factor_difuso = L.prod_punto(N);
-        vec3 luz_difusa(0, 0, 0);
-        if (factor_difuso > 0) {
-            luz_difusa = luz.color * pObj->kd * factor_difuso;
-        }
-        color_min = color_min * (luz_ambiente + luz_difusa);
 
+        // calculando sombra
+        Rayo rayo_sombra;
+        rayo_sombra.dir = L;
+        rayo_sombra.ori = pi + L * 0.1;
+        vec3 color_tmp;
+        bool interse = calcular_color(rayo_sombra, luz, vec_objetos, color_tmp, prof+1);
+        if ( !interse ) {
+            float factor_difuso = L.prod_punto(N);
+            vec3 luz_difusa(0, 0, 0);
+            if (factor_difuso > 0) {
+                luz_difusa = luz.color * pObj->kd * factor_difuso;
+            }
+            color_min = color_min * (luz_ambiente + luz_difusa);
+        } else {
+            color_min = color_min * luz_ambiente;
+        }
         if (pObj->ke > 0) {
             Rayo rayo_ref;
             vec3 vec_rayo = -rayo.dir;

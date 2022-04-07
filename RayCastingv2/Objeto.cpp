@@ -28,3 +28,13 @@ bool Esfera::interseccion(Rayo &rayo, float &t, vec3 &normal) {
     }
     return false;
 }
+
+bool Plano::interseccion(Rayo &rayo, float &t, vec3 &normal) {
+    t = - (n.prod_punto(rayo.ori) + d) / (n.prod_punto(rayo.dir));
+    if (t < 0) {
+        return false;
+    }
+    // falta corregir la normal segun la direccion del rayo
+    normal = n;
+    return true;
+}
