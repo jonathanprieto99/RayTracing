@@ -6,6 +6,7 @@
 #define RAYCASTINGV2_VEC3_H
 
 #include <iostream>
+#include <cmath>
 
 class vec3 {
 public:

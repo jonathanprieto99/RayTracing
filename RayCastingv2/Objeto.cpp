@@ -19,6 +19,7 @@ bool Esfera::interseccion(Rayo &rayo, float &t, vec3 &normal) {
         float t1 = (-b - sqrt(det)) / (2*a);
         float t2 = (-b + sqrt(det)) / (2*a);
         t = min(t1, t2);
+        if(t <= 0) {return false;}
         //color = this->color;
         vec3 pi = o + d * t;
         normal = pi-cen;

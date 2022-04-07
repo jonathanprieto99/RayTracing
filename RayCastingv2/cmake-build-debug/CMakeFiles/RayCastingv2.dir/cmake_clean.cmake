@@ -8,8 +8,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/RayCastingv2.dir/vec3.cpp.obj"
   "RayCastingv2.exe"
   "RayCastingv2.exe.manifest"
-  "RayCastingv2.lib"
   "RayCastingv2.pdb"
+  "libRayCastingv2.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.

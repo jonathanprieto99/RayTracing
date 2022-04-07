@@ -44,7 +44,7 @@ void Camara::Renderizar(Luz luz, vector<Objeto*> &vec_objetos) {
             rayo.dir = ze*(-f) + ye*a*(y/h -0.5) + xe*b*(x/w-0.5);
             rayo.dir.normalize();
             //color_min = vec3(1,1,1);
-            bool interse = calcular_color(rayo, luz, vec_objetos, color, 1);
+            bool interse = calcular_color(rayo, luz, vec_objetos, color, 0);
 
             (*pImg)(x,h-1-y,0) = (BYTE)(color.x * 255);
             (*pImg)(x,h-1-y,1) = (BYTE)(color.y * 255);
@@ -96,8 +96,9 @@ bool Camara::calcular_color(Rayo rayo, Luz &luz, vector<Objeto*> &vec_objetos, v
 
         if (pObj->ke > 0) {
             Rayo rayo_ref;
+            vec3 vec_rayo = -rayo.dir;
 
-            vec3 R = N * (N.prod_punto(-rayo.dir)) * 2 + rayo.dir;
+            vec3 R = N * (vec_rayo.prod_punto(N)) * 2 - vec_rayo;
             R.normalize();
             rayo_ref.dir = R;
             rayo_ref.ori = (rayo.ori + rayo.dir * t) + R * 0.1;
@@ -105,7 +106,9 @@ bool Camara::calcular_color(Rayo rayo, Luz &luz, vector<Objeto*> &vec_objetos, v
             // lanzar rayo secundario
             bool interse = calcular_color(rayo_ref, luz, vec_objetos, color_reflejado, prof+1);
             // calcular intersecciones
-            color_min = (color_min + color_reflejado)*0.5;
+            if (interse) {
+                color_min = color_min + color_reflejado * 0.8;
+            }
         }
         color_min.max_to_one();
         color = color_min;
