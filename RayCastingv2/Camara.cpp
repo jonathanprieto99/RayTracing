@@ -102,6 +102,7 @@ bool Camara::calcular_color(Rayo rayo, Luz &luz, vector<Objeto*> &vec_objetos, v
             if (factor_difuso > 0.1) {
                 luz_difusa = luz.color * pObj->kd * factor_difuso;
             }
+            // iluminacion especular
             vec3 r = N * N.prod_punto(L) * 2 - L;
             vec3 v = -rayo.dir;
             r.normalize();

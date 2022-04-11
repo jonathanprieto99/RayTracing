@@ -47,5 +47,13 @@ void Mundo::escenario1() {
     plano->ke = 0;
     vec_objetos.emplace_back(plano);
 
+    Cilindro *cil1 = new Cilindro;
+    cil1->color = vec3(0,1,1);
+    cil1->pa = vec3(5,30,20);
+    cil1->pb = vec3(-5,10,20);
+    cil1->ra = 10;
+    cil1->ke = 0;
+    vec_objetos.emplace_back(cil1);
+
     cam.Renderizar( luz, vec_objetos );
 }

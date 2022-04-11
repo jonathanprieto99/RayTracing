@@ -30,4 +30,11 @@ public:
     bool interseccion(Rayo &rayo, float &t, vec3 &normal);
 };
 
+
+class Cilindro : public Objeto {
+public:
+    vec3 pa, pb;
+    float ra;
+    bool interseccion(Rayo &rayo, float &t, vec3 &normal);
+};
 #endif //RAYCASTINGV2_OBJETO_H

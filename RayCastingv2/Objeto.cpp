@@ -38,3 +38,39 @@ bool Plano::interseccion(Rayo &rayo, float &t, vec3 &normal) {
     normal = n;
     return true;
 }
+
+bool Cilindro::interseccion(Rayo &rayo, float &t, vec3 &normal) {
+    vec3 ro = rayo.ori;
+    vec3 rd = rayo.dir;
+    vec3 ca = pb-pa;
+    vec3 oc = ro-pa;
+    float caca = ca.prod_punto(ca);
+    float card = ca.prod_punto(rd);
+    float caoc = ca.prod_punto(oc);
+    float a = caca - card*card;
+    float b = caca * oc.prod_punto(rd) - caoc*card;
+    float c = caca * oc.prod_punto(oc) - caoc*caoc - ra*ra*caca;
+    float h = b*b - a*c;
+    if( h<0.0 ) {
+        return false; //no intersection
+    }
+    h = sqrt(h);
+    t = (-b-h)/a;
+    if (t <= 0) return false;
+    // body
+    float y = caoc + t*card;
+    if( y>0.0 && y<caca ) {
+        normal = (oc + rd * t - ca * y / caca)/ra;
+        normal.normalize();
+        return true;
+    }
+    // caps
+    t = (((y<0.0)?0.0:caca) - caoc)/card;
+    if (t <= 0) return false;
+    if( abs(b + a * t)<h ) {
+        normal = ca * sgn(y) /caca;
+        normal.normalize();
+        return true;
+    }
+    return false; //no intersection
+}
