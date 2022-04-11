@@ -10,9 +10,9 @@
 
 class Objeto {
 public:
-    Objeto(){ kd = 0.5; ke = 0; }
+    Objeto(){ kd = 0.5; ke = 0; n = 1; }
     vec3 color;
-    float kd, ke;
+    float kd, ke, n;
     virtual bool interseccion(Rayo &rayo, float &t, vec3 &normal)=0;
 };
 

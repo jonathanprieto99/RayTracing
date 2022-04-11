@@ -99,10 +99,20 @@ bool Camara::calcular_color(Rayo rayo, Luz &luz, vector<Objeto*> &vec_objetos, v
         if ( !interse ) {
             float factor_difuso = L.prod_punto(N);
             vec3 luz_difusa(0, 0, 0);
-            if (factor_difuso > 0) {
+            if (factor_difuso > 0.1) {
                 luz_difusa = luz.color * pObj->kd * factor_difuso;
             }
-            color_min = color_min * (luz_ambiente + luz_difusa);
+            vec3 r = N * N.prod_punto(L) * 2 - L;
+            vec3 v = -rayo.dir;
+            r.normalize();
+            vec3 luz_especular(0,0,0);
+            if (pObj->ke > 0) {
+                float factor_especular = pow(r.prod_punto(v), pObj->n);
+                if (factor_especular > 0.1) {
+                    luz_especular = luz.color *  pObj->ke * factor_especular;
+                }
+            }
+            color_min = color_min * (luz_ambiente + luz_difusa + luz_especular);
         } else {
             color_min = color_min * luz_ambiente;
         }
@@ -119,7 +129,7 @@ bool Camara::calcular_color(Rayo rayo, Luz &luz, vector<Objeto*> &vec_objetos, v
             bool interse = calcular_color(rayo_ref, luz, vec_objetos, color_reflejado, prof+1);
             // calcular intersecciones
             if (interse) {
-                color_min = color_min + color_reflejado * 0.8;
+                color_min = color_min + color_reflejado*0.8;
             }
         }
         color_min.max_to_one();
