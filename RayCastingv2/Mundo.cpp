@@ -20,24 +20,6 @@ void Mundo::escenario1() {
     esf1->n = 4;
     vec_objetos.emplace_back(esf1);
 
-    Esfera *esf2 = new Esfera;
-    esf2->cen = vec3(30,30,0);
-    esf2->rad = 15;
-    esf2->color = vec3(1,1,0);
-    esf2->kd = 0.8;
-    esf2->ke = 0.4;
-    esf2->n = 16;
-    vec_objetos.emplace_back(esf2);
-
-    Esfera *esf3 = new Esfera;
-    esf3->cen = vec3(-30,20,0);
-    esf3->rad = 20;
-    esf3->color = vec3(0,0,1);
-    esf3->kd = 0.8;
-    esf3->ke = 0.4;
-    esf3->n = 8;
-    vec_objetos.emplace_back(esf3);
-
     Plano *plano = new Plano;
     plano->n = vec3(1,10,1);
     plano->n.normalize();
