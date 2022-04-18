@@ -14,6 +14,10 @@ vec3 operator/(float f, vec3 &v) {
 
     return vec3(tx, ty, tz);
 }
+vec3 operator*(float f, vec3 &v) {
+    return vec3(f*v.x, f*v.y, f*v.z);
+}
+
 vec3 abs(vec3 &v) {
     return vec3( abs(v.x), abs(v.y), abs(v.z) );
 }

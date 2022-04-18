@@ -19,6 +19,7 @@ public:
 
     void Renderizar();
     void escenario1();
+    void escenario2();
 };
 
 

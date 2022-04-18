@@ -35,6 +35,12 @@ public:
     void Renderizar();
     void Renderizar(Luz luz, vector<Objeto*> &vec_objetos);
     bool calcular_color(Rayo rayo, Luz &luz, vector<Objeto*> &vec_objetos, vec3 &color, int prof);
+
+    void fresnel(vec3 I, vec3 N, float ior, float &kr );
+    vec3 refract(vec3 I, vec3 N, float ior);
+    float clamp(float n, float lower, float upper) {
+        return max(lower, min(n, upper));
+    }
 };
 
 
