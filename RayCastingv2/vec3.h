@@ -15,7 +15,8 @@ template <typename T> int sgn(T val) {
 class vec3 {
 public:
     float x, y, z;
-    vec3(){}
+    vec3(){ x=y=z=0; }
+    vec3(float _x) { x=y=z=_x; }
     vec3(float _x, float _y, float _z) { x=_x; y=_y; z=_z; }
     void set(float _x, float _y, float _z) {
         x = _x;
@@ -57,6 +58,7 @@ public:
     vec3 zxy() { return vec3(z, x, y); }
 };
 vec3 operator/(float f, vec3 &v);
+vec3 operator*(float f, vec3 &v);
 
 vec3 abs(vec3 &v);
 vec3 sign(vec3 &v);
